@@ -41,7 +41,7 @@ const Dessert = ({ desserts }) => {
               </button>
             )}
 
-            {userRole === "admin" && (
+            {userRole === "basic" && (
               <ModalDessert
                 dessertFiltrada={dessertFiltrada}
                 closeModal={setShow}
