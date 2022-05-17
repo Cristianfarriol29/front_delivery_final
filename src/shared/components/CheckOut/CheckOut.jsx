@@ -7,8 +7,6 @@ const CheckOut = ({ subtotal, cartProducts }) => {
   const { setCartItems } = useCartContext();
 
   function getToken(token) {
-    console.log("1", token, subtotal, cartProducts);
-
     const sendCheckOut = async (token, subtotal, cartProducts) => {
       let userData = JSON.parse(localStorage.getItem("user"));
 
@@ -27,7 +25,6 @@ const CheckOut = ({ subtotal, cartProducts }) => {
           { token, subtotal, cartProducts, user }
         );
 
-        console.log(response);
         if (response.data === "Payment done") {
           Swal.fire("Correcto", "Su pago se realizó correctamente", "success");
           setCartItems([]);

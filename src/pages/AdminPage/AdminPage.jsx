@@ -16,8 +16,6 @@ const AdminPage = () => {
 
   const [usersOrders, setUsersOrders] = useState([]);
 
-  // console.log("userOrder",usersOrders)
-
   useEffect(() => {
     API.get(`/order`, {
       headers: {
@@ -77,8 +75,6 @@ const AdminPage = () => {
           </tr>
 
           {usersOrders.map((order, index) => {
-            console.log(order);
-
             return (
               <AdminData
                 key={index}

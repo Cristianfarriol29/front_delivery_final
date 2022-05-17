@@ -17,12 +17,11 @@ const ClientsOrdersPage = () => {
   console.log("userOrder", usersOrders);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:8000/api/order`, {
-        headers: {
-          Authorization: `Bearer ${userToken}`,
-        },
-      })
+    AudioParam.get(`/order`, {
+      headers: {
+        Authorization: `Bearer ${userToken}`,
+      },
+    })
       .then((response) => {
         let orders = response.data.filter((data) => data.userId === _id);
 
