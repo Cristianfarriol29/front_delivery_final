@@ -3,6 +3,7 @@ import ClientOrder from "../../shared/components/ClientOrder/ClientOrder";
 import "./_ClientOrdersPage.scss";
 
 import axios from "axios";
+import { API } from "../../shared/services/api";
 
 const ClientsOrdersPage = () => {
   let user = JSON.parse(localStorage.getItem("user"));
@@ -17,7 +18,7 @@ const ClientsOrdersPage = () => {
   console.log("userOrder", usersOrders);
 
   useEffect(() => {
-    AudioParam.get(`/order`, {
+    API.get(`/order`, {
       headers: {
         Authorization: `Bearer ${userToken}`,
       },
