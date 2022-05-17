@@ -12,18 +12,16 @@ export const LoginForm = () => {
 
   const onSubmit = (formData) => {
     API.post("users/login", formData).then((response) => {
-      console.log(response);
       localStorage.setItem("token", response.data.token);
       localStorage.setItem("user", JSON.stringify(response.data.userData));
 
       setJwt(response.data);
-      let user = JSON.parse(localStorage.getItem('user'));
-      console.log(user.role);
-      if (user.role === 'admin') {
+      let user = JSON.parse(localStorage.getItem("user"));
+      if (user.role === "admin") {
         navigate("/admin");
         window.location.reload(true);
-      } else if (user.role === 'basic') {
-         navigate("/");
+      } else if (user.role === "basic") {
+        navigate("/");
       }
     });
   };
