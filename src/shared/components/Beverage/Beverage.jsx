@@ -40,6 +40,12 @@ const Beverage = ({ beverages }) => {
               </button>
             )}
 
+            {userRole === "admin" && (
+              <Link to={`/admin/deleteproduct/beverages/${beverage._id}`}>
+                <button className="btn">EDITAR PRODUCTO</button>
+              </Link>
+            )}
+
             {show && (ID === beverage._id) & (userRole !== "admin") && (
               <ModalBeverages
                 beverageFiltrada={beverageFiltrada}

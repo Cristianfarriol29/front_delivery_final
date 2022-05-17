@@ -41,17 +41,18 @@ const Dessert = ({ desserts }) => {
               </button>
             )}
 
+            {userRole === "admin" && (
+              <Link to={`/admin/deleteproduct/desserts/${dessert._id}`}>
+                <button className="btn">EDITAR PRODUCTO</button>
+              </Link>
+            )}
+
             {show && (ID === dessert._id) & (userRole !== "admin") && (
               <ModalDessert
                 dessertFiltrada={dessertFiltrada}
                 closeModal={setShow}
               />
             )}
-
-            {/* {show &&
-              ID === dessert._id &&
-              user !== null &&
-              user.role === "admin" && <button>BOTON DE ADMINISTRADOR</button>} */}
           </div>
         );
       })}
