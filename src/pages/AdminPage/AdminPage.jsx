@@ -2,6 +2,7 @@ import AdminData from "../../shared/components/AdminData/AdminData";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./_AdminPage.scss";
+import { API } from "../../shared/services/api";
 
 //hacer fetch o get con axios de los datos de orders y mapear el componente admindata
 //ahora mismo estoy simulando
@@ -18,12 +19,11 @@ const AdminPage = () => {
   // console.log("userOrder",usersOrders)
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:8000/api/order`, {
-        headers: {
-          Authorization: `Bearer ${userToken}`,
-        },
-      })
+    API.get(`/order`, {
+      headers: {
+        Authorization: `Bearer ${userToken}`,
+      },
+    })
       .then((response) => {
         let orders = response.data;
 
