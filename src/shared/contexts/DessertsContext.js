@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect } from "react";
-import axios from "axios";
 import { API } from "../services/api";
 
 export const DessertContext = React.createContext();

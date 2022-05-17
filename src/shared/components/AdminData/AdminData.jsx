@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-
 import Swal from "sweetalert2";
 
-import axios from "axios";
-
 import "./_AdminData.scss";
+import { API } from "../../services/api";
 
 const AdminData = ({
   date,
@@ -30,7 +28,7 @@ const AdminData = ({
     const { Id, state } = data;
 
     try {
-      const response = await axios.post("http://localhost:8000/api/status", {
+      const response = await API.post("/status", {
         state,
         Id,
       });
@@ -68,7 +66,6 @@ const AdminData = ({
         <h2>{email}</h2>
       </td>
 
-      
       <td>
         {items.map((i, index) => {
           return (
@@ -81,49 +78,54 @@ const AdminData = ({
                 <i>Product price: {(i.amount * i.price).toFixed(2)} Euros</i>
               </h2>
             </div>
-           
           );
         })}
       </td>
-      <td><h2>{price.toFixed(2)} Euros</h2></td>
+      <td>
+        <h2>{price.toFixed(2)} Euros</h2>
+      </td>
 
       <td>
-       <h2><select
-          className="select"
-          value={orderStatus}
-          onChange={(e) => {
-            setOrderStatus(e.target.value);
+        <h2>
+          <select
+            className="select"
+            value={orderStatus}
+            onChange={(e) => {
+              setOrderStatus(e.target.value);
 
-            setPostData({
-              ...postData,
-              Id: orderId,
-              state: e.target.value,
-            });
+              setPostData({
+                ...postData,
+                Id: orderId,
+                state: e.target.value,
+              });
 
-            // postStatus(orderId, e.target.value)
+              // postStatus(orderId, e.target.value)
 
-            console.log(orderId);
-          }}
-        >
-          {differentStatus.map((status, index) => {
-            return (
-              <option key={index} value={status}>
-                {status}
-              </option>
-            );
-          })}
-          </select></h2>
+              console.log(orderId);
+            }}
+          >
+            {differentStatus.map((status, index) => {
+              return (
+                <option key={index} value={status}>
+                  {status}
+                </option>
+              );
+            })}
+          </select>
+        </h2>
       </td>
       <td>
-       <h2><button
-          onClick={() => {
-            postStatus(postData);
-            changeColor(orderStatus);
-          }}
-          className={color}
-        >
-          Submit
-        </button></h2> 
+        <h2>
+          <button
+            onClick={() => {
+              postStatus(postData);
+              changeColor(orderStatus);
+            }}
+            className={color}
+          >
+            Submit
+          </button>
+        </h2>
       </td>
     </tr>
   );
