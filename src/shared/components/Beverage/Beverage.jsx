@@ -40,7 +40,7 @@ const Beverage = ({ beverages }) => {
               </button>
             )}
 
-            {userRole === "basic" && (
+            {show && (ID === beverage._id) & (userRole !== "admin") && (
               <ModalBeverages
                 beverageFiltrada={beverageFiltrada}
                 closeModal={setShow}
