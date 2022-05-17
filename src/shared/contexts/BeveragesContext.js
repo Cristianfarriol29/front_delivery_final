@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import axios from "axios";
+import { API } from "../services/api";
 
 export const BeveragesContext = React.createContext();
 
@@ -13,9 +14,7 @@ export default function BeveragesProvider({ children }) {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    axios
-      .get("http://localhost:8000/api/products/beverages")
-      .then((result) => setBeverages(result.data));
+    API.get("/products/beverages").then((result) => setBeverages(result.data));
   }, []);
 
   useEffect(() => {

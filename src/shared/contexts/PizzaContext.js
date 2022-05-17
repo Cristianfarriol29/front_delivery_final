@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import axios from "axios";
+import { API } from "../services/api";
 
 export const PizzaContext = React.createContext();
 
@@ -14,9 +15,7 @@ export default function PizzaProvider({ children }) {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    axios
-      .get("http://localhost:8000/api/products/pizzas")
-      .then((result) => setPizzas(result.data));
+    API.get("/products/pizzas").then((result) => setPizzas(result.data));
   }, []);
 
   useEffect(() => {
