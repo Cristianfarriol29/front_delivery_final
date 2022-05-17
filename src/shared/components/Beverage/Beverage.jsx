@@ -41,7 +41,7 @@ const Beverage = ({ beverages }) => {
             )}
 
             {userRole === "admin" && (
-              <Link to={`/admin/deleteproduct/beverages/${beverage._id}`}>
+              <Link to={`/admin/deleteproduct/beverage/${beverage._id}`}>
                 <button className="btn">EDITAR PRODUCTO</button>
               </Link>
             )}
