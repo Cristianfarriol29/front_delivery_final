@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useUserContext } from "../../contexts/UserContext";
 import ModalBeverages from "../ModalBeverages/ModalBeverages";
 
 const Beverage = ({ beverages }) => {
   const [show, setShow] = useState(false);
   const [beverageFiltrada, setBeverageFiltrada] = useState([]);
   const [ID, setID] = useState("");
-  let user = JSON.parse(localStorage.getItem("user"));
+  const { userRole } = useUserContext();
   const filtrarBeverage = (id) => {
     setBeverageFiltrada(beverages.filter((p) => p._id === id));
   };
@@ -26,7 +27,7 @@ const Beverage = ({ beverages }) => {
               </p>
             </div>
 
-            {user !== null && user.role !== "admin" ? (
+            {userRole === "basic" && (
               <button
                 onClick={() => [
                   filtrarBeverage(beverage._id),
@@ -37,26 +38,19 @@ const Beverage = ({ beverages }) => {
               >
                 Pedir
               </button>
-            ) : (
-              <Link to={`/admin/deleteproduct/beverage/${beverage._id}`}>
-                <button className="btn">EDITAR PRODUCTO</button>
-              </Link>
             )}
 
-            {show &&
-              ID === beverage._id &&
-              user !== null &&
-              user.role !== "admin" && (
-                <ModalBeverages
-                  beverageFiltrada={beverageFiltrada}
-                  closeModal={setShow}
-                />
-              )}
+            {userRole === "admin" && (
+              <ModalBeverages
+                beverageFiltrada={beverageFiltrada}
+                closeModal={setShow}
+              />
+            )}
 
-            {show &&
+            {/* {show &&
               ID === beverage._id &&
               user !== null &&
-              user.role === "admin" && <button>Eliminar producto</button>}
+              user.role === "admin" && <button>Eliminar producto</button>} */}
           </div>
         );
       })}
