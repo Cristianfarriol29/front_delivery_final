@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@200;500&display=swap");
+
+
+
+.pizza_card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    width: 100%;
+
+    &-individual {
+        padding: 2rem;
+        box-shadow: 0 0 2px 0 rgb(0 0 0 / 12%), 0 2px 2px 0 rgb(0 0 0 / 24%);
+        font-family: "Outfit";
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap:2rem;
+
+
+        &-details{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            font-size: 2rem;
+            max-width: 200px;
+            text-align: center;
+            a {
+                text-decoration: none;
+            }
+        }
+        &-select{
+            padding: 0.5rem;
+        }
+    }
+    
+}
+
+
+.btn {
+  padding: 2rem;
+  background-color: #E2001A;
+  color: #FFF;
+  text-transform: uppercase;
+  line-height: 5px;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  border :1px solid #E2001A;
+  cursor: pointer;
+}
+
+
+.resumen {
+    display: -webkit-box;
+    /* //FORMATO VERTICAL EN QUE SE LEERA EL TEXTO */
+    -webkit-box-orient: vertical;
+    /* LA CANTIDAD DE LINEAS QUE VAMOS A MOSTRAR ANTES DE CORTARLO */
+    -webkit-line-clamp: 4;
+    /* OCULTA EL RESTO DEL TEXTO */
+    overflow: hidden;
+  }

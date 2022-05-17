@@ -1,0 +1,28 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@200;500&display=swap");
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  font-family: "Outfit";
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+
+.container {
+  max-width: 120rem;
+  width: 50%;
+  margin: 0 auto;
+
+  
+}
+
+.container_home {
+  padding-bottom: 15rem;
+}
+
+h3{
+  font-size: 1rem;
+}

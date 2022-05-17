@@ -1,0 +1,14 @@
+.inputSearch{
+
+    padding: 2rem;
+    text-align: center;
+    input {
+        height: 3rem;
+        width: 650px;
+        @media (max-width: 768px ){
+            width: 250px;
+        }
+
+    }
+    
+}

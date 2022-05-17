@@ -1,0 +1,125 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #E2001A ;
+    opacity: 0.80;
+    padding: 3rem;
+    
+
+
+    @media (max-width: 768px) {
+        .navbar img{
+            height:100px;
+            width:100px;
+        }
+        padding: 0;
+        flex-wrap: nowrap;
+
+    }
+
+
+    .navbar_logo img{
+        height:250px;
+        width:250px;
+    }
+    &_links{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        &-cart img{
+            width: 55px;
+            height: 55px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .navbar_logo img{
+            height:100px;
+            width:100px;
+        }
+        
+    }
+
+
+    &_links-cart {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        
+        }
+        &_links-cart_cant {
+            position: absolute;
+            top: 15px;
+            right: 80px;
+            color: white;
+            @media (max-width: 768px) {
+                
+                top: 10px;
+                right: 70px;
+        
+            }
+            }
+
+            &_profile{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                &-img img{
+                height: 150px;
+                width: 150px;
+                @media (max-width: 768px) {
+                    height: 50px;
+                    width: 50px;
+
+                }
+                }
+
+                
+                
+}
+
+
+.block {
+    display: block
+}
+.none {
+    display: none;
+}
+}
+
+.carritoSpan {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    // border-radius: 30px;
+    align-content: space-between;
+    justify-content: center;
+    margin: 10px;
+    font-size: 50px;
+
+    
+}
+
+.span {
+    position: absolute;
+    font-size: 15px;
+    margin-top: 25px;
+    margin-left: 47px;
+    padding: 3px;
+    width: auto;
+    border-radius: 100px;
+    color: white;
+    
+}
+
+

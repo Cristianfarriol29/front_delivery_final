@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Great+Vibes&family=IM+Fell+Great+Primer&family=Noto+Sans:ital,wght@0,300;0,600;1,300;1,400;1,800&display=swap');
+
+
+//eliminado esto de la contraparte width="250px" height="250px"
+.containerProfile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 9rem;
+}
+.dataProfile {
+    display: flex;
+    min-width: 95%;
+    margin-bottom: 30px;
+    justify-content: space-evenly;
+}
+.data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    &_name {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap:1rem;
+    }
+    &_email {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap:1rem;
+    }
+}
+.imageProfile {
+    background-color: rgb(242, 232, 207);
+    border-radius: 48px;
+    box-shadow: 3px 2px 8px 11px rgb(56 102 65);
+    
+}
+.formProfile {
+    width: 95%;
+    display: flex;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.form {
+    display: flex;
+    margin: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.formInput {
+    border-radius: 15px;
+    background-color: rgb(242, 232, 207);
+    margin: 10px;
+}
+
+.buttonProfile {
+    background-color: rgb(215, 56, 51);
+    border-radius: 15px;
+}
+
+
+@media screen and (max-width: 700px) {
+
+    .imageProfile {
+        img{
+            
+            border-radius: 48px;
+        }
+        background-color: rgb(242, 232, 207);
+      
+        
+        box-shadow: 3px 2px 8px 11px rgb(56 102 65);
+    }
+
+    .dataProfile{
+    flex-direction: column;
+    }
+
+  
+}
