@@ -62,6 +62,10 @@ export const RegisterForm = () => {
               />
             </div>
             <div className="form-group">
+              Recuerda que la contraseña debe tener un minimo de 8 caracteres
+              (Mayus, minus y carac especial)
+            </div>
+            <div className="form-group">
               Ya estas registrado? <Link to="/login">Logeate!</Link>
             </div>
             <button className="btn btn-primary btn-block">Register</button>

@@ -17,12 +17,13 @@ const CheckOut = ({ subtotal, cartProducts }) => {
       };
 
       try {
-        const response = await API.post("/orders/checkout", {
+        const response = await API.post("orders/checkout", {
           token,
           subtotal,
           cartProducts,
           user,
         });
+        console.log(response);
 
         if (response.data === "Payment done") {
           Swal.fire("Correcto", "Su pago se realizó correctamente", "success");
