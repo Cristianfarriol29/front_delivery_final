@@ -70,10 +70,10 @@ const CartPage = () => {
               </div>
             </div>
             <div className="cart_items-info">
-              <p className="bg-dark text-light p-1">
+              <p className=" text-dark p-1">
                 Precio: {productosDelCarrito.price} €
               </p>
-              <p className="bg-dark text-light p-1">
+              <p className=" text-dark p-1">
                 Subtotal: {parseInt(productosDelCarrito.subtotal)} €
               </p>
             </div>

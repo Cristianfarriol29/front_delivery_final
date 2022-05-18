@@ -77,54 +77,47 @@ export const UserProfile = () => {
   };
 
   return (
-    <div className="containerProfile">
-      <h1>PERFIL:</h1>
-
-      {/* <div className="dataProfile"> */}
-      <div className="data mb-5">
-        <div className="data_name">
-          <h1 className="text-light bg-dark p-1">NOMBRE: </h1>
-          <h2>{user.name.toUpperCase()}</h2>
-        </div>
-        <div className="data_email">
-          <h1 className="text-light bg-dark p-1">EMAIL: </h1>
-          <h2>{user.email.toUpperCase()}</h2>
-        </div>
-      </div>
-      <div className="imageProfile mb-5">
+    <div className="containerProfile container">
+      <div className="profileData">
         <img src={user.img} alt="" height={250} width={250} />
+        <h2>{user.name.toUpperCase()}</h2>
+        <h2>{user.email.toUpperCase()}</h2>
       </div>
-      {/* </div> */}
-      <div className="formProfile">
-        <form onSubmit={handleSubmit(onSubmitImg)} className="form">
-          <h2>Subir nueva imagen:</h2>
-          <input
-            type="file"
-            name="img"
-            className="formInput"
-            {...register("img", { required: false })}
-          />
-          <button className="buttonProfile">Subir imagen</button>
-        </form>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="form">
-          <h2>Cambiar nombre:</h2>
-          <input
-            type="text"
-            name="name"
-            className="formInput"
-            {...register("name", { required: false })}
-          />
-          <h2>Cambiar email:</h2>
-          <input
-            type="email"
-            name="email"
-            className="formInput"
-            {...register("email", { required: false })}
-          />
+      <div className="profileEdit">
+        <div className="profileEdit_image form">
+          <form onSubmit={handleSubmit(onSubmitImg)} className="form">
+            <h2>Subir nueva imagen:</h2>
+            <input
+              type="file"
+              name="img"
+              className="formInput"
+              {...register("img", { required: false })}
+            />
+            <button className="btn-primary">Subir imagen</button>
+          </form>
+        </div>
 
-          <button className="buttonProfile">Subir</button>
-        </form>
+        <div className="profileEdit_data form">
+          <form onSubmit={handleSubmit(onSubmit)} className="form">
+            <h2>Cambiar nombre:</h2>
+            <input
+              type="text"
+              name="name"
+              className="formInput"
+              {...register("name", { required: false })}
+            />
+            <h2>Cambiar email:</h2>
+            <input
+              type="email"
+              name="email"
+              className="formInput"
+              {...register("email", { required: false })}
+            />
+
+            <button className="btn-primary">Subir</button>
+          </form>
+        </div>
       </div>
     </div>
   );
