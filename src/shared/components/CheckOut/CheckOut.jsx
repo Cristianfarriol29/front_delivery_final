@@ -1,7 +1,7 @@
-import axios from "axios";
 import StripeCheckout from "react-stripe-checkout";
 import Swal from "sweetalert2";
 import { useCartContext } from "../../contexts/CartContext";
+import { API } from "../../services/api";
 
 const CheckOut = ({ subtotal, cartProducts }) => {
   const { setCartItems } = useCartContext();
@@ -16,14 +16,13 @@ const CheckOut = ({ subtotal, cartProducts }) => {
         _id: userData._id,
       };
 
-      console.log(user);
-
       try {
-        console.log("2", token, subtotal);
-        const response = await axios.post(
-          "http://localhost:8000/api/orders/checkout",
-          { token, subtotal, cartProducts, user }
-        );
+        const response = await API.post("/orders/checkout", {
+          token,
+          subtotal,
+          cartProducts,
+          user,
+        });
 
         if (response.data === "Payment done") {
           Swal.fire("Correcto", "Su pago se realizó correctamente", "success");
